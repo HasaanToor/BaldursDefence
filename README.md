@@ -9,4 +9,4 @@ Baldur's Defense is a tower defense game inspired by the world of Baldur's Gate 
 ## Assignment of Responsibility
 - Hasaan: Team Lead (Full Stack Developer) - creating game logic, map/path layout, damage/health values balancing
 - Aryan: Documentation (assist with code when needed) - creating/getting game art and assets, visuals and audio (potentially)
-- 
+  
