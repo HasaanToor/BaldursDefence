@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://c87iulpxb0d0k"]
+
+[ext_resource type="Script" path="res://Projectiles/Arrow.gd" id="1_8fxq1"]
+[ext_resource type="Texture2D" uid="uid://e58c6br666p5" path="res://Assets/Projectiles/Arrow.png" id="1_ullgn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vv5l"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjmig"]
+size = Vector2(20, 12)
+
+[node name="Arrow" type="CharacterBody2D"]
+script = ExtResource("1_8fxq1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1vv5l")
+
+[node name="Arrow" type="Sprite2D" parent="."]
+texture = ExtResource("1_ullgn")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_vjmig")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

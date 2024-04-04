@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnfs67bp8vpr4"]
+
+[ext_resource type="Texture2D" uid="uid://cqgx6vwey0bd2" path="res://Assets/Towers/Ranger.png" id="1_ceqpi"]
+[ext_resource type="Script" path="res://Towers/Ranger.gd" id="1_va4d2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgoqw"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iuolw"]
+radius = 120.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2186s"]
+bg_color = Color(1, 0.337255, 0.32549, 1)
+corner_radius_top_left = 120
+corner_radius_top_right = 120
+corner_radius_bottom_right = 120
+corner_radius_bottom_left = 120
+
+[node name="Ranger" type="StaticBody2D"]
+script = ExtResource("1_va4d2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kgoqw")
+
+[node name="Aim" type="Marker2D" parent="."]
+
+[node name="Ranger" type="Sprite2D" parent="."]
+texture = ExtResource("1_ceqpi")
+
+[node name="Tower" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
+shape = SubResource("CircleShape2D_iuolw")
+
+[node name="Container" type="Node" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+modulate = Color(0, 0, 0.392157, 0.313726)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -120.0
+offset_right = 120.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2186s")
+
+[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
+[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://c10hfcoqyq230"]
+
+[ext_resource type="Texture2D" uid="uid://bix3ibdxbyuwc" path="res://Assets/Enemies/Hobgoblin.png" id="1_sn5l0"]
+[ext_resource type="Script" path="res://Enemies/Hobgoblin.gd" id="1_y1ml1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yyxfi"]
+size = Vector2(32, 32)
+
+[node name="PathFollow2D" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_y1ml1")
+
+[node name="Hobgoblin" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hobgoblin"]
+shape = SubResource("RectangleShape2D_yyxfi")
+
+[node name="Hobgoblin" type="Sprite2D" parent="Hobgoblin"]
+texture = ExtResource("1_sn5l0")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chbday1g2qya1"]
+
+[ext_resource type="Script" path="res://Scenes/Points.gd" id="1_qdmlf"]
+
+[node name="Points" type="Node"]
+script = ExtResource("1_qdmlf")
