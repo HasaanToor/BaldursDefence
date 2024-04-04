@@ -16,7 +16,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	PointPath.get_node("HealthLabel").set_text("Health:❤" + str(Points.hp))
-	PointPath.get_node("PointLabel").set_text("Coins:🪙" + str(Points.points))
+	PointPath.get_node("PointLabel").set_text("Coins:💰" + str(Points.points))
 	if Points.hp <= 0:
 		get_tree().change_scene_to_file("res://MainMenu/GameOver.tscn")
 
@@ -35,3 +35,6 @@ func wave1():
 		enemy = hobgoblin.instantiate()
 		path.add_child(enemy)
 		await get_tree().create_timer(0.25).timeout # timer
+		
+	while (path.get_child_count() != 0):
+		get_tree().change_scene_to_file("res://MainMenu/Win.tscn")

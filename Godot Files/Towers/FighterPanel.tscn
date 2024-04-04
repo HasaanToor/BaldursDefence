@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dh17jt4n3id65"]
+
+[ext_resource type="Script" path="res://Towers/FighterPanel.gd" id="1_0up7q"]
+[ext_resource type="Texture2D" uid="uid://b1t5pjqdnaacp" path="res://Assets/Towers/Fighter.png" id="2_4esbh"]
+
+[node name="FighterPanel" type="Panel"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_0up7q")
+
+[node name="Ranger" type="Sprite2D" parent="."]
+position = Vector2(16, 16)
+texture = ExtResource("2_4esbh")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

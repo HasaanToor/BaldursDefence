@@ -1,7 +1,7 @@
 extends PathFollow2D
 
 # speed of enemy
-@export var speed = 100
+@export var speed = 200
 var health = 20
 
 func _process(delta):
