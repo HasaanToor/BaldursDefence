@@ -53,7 +53,8 @@ text = "Play"
 
 [node name="HowToPlay" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "How To Play"
+text = "About
+"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2

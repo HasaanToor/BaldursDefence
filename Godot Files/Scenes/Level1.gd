@@ -19,6 +19,9 @@ func _process(delta):
 	PointPath.get_node("PointLabel").set_text("Coins:💰" + str(Points.points))
 	if Points.hp <= 0:
 		get_tree().change_scene_to_file("res://MainMenu/GameOver.tscn")
+	await get_tree().create_timer(1.0).timeout # timer
+	if (path.get_child_count() == 0):
+		get_tree().change_scene_to_file("res://MainMenu/Win.tscn")
 
 func wave1():
 	for i in 5: # repeat 5 times
@@ -35,6 +38,3 @@ func wave1():
 		enemy = hobgoblin.instantiate()
 		path.add_child(enemy)
 		await get_tree().create_timer(0.25).timeout # timer
-		
-	while (path.get_child_count() != 0):
-		get_tree().change_scene_to_file("res://MainMenu/Win.tscn")
